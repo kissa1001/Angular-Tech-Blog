@@ -1,0 +1,19 @@
+<div class="container" ng-controller='addPostCtrl'>
+  <form class="post-form" ng-submit="addPost()" style="margin-top:30px;" >
+  <h3>Add a new post</h3>
+
+  <div class="form-group">
+    <label class="control-label" htmlFor="content">Tittle:</label>
+    <input type="text" class="form-control" placeholder="Title" ng-model="title"></input>
+  </div>
+  <div class="form-group">
+    <label class="control-label" htmlFor="content">Tags:</label>
+    <input type="text" class="form-control" placeholder="Tags" ng-model="tags"></input>
+  </div>
+  <div class="form-group">
+    <label class="control-label" htmlFor="content">Content:</label>
+    <textarea class="form-control" rows="5" id="content" name="content" ng-model="content"  placeholder="Content goes here ..."></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Post</button>
+</form>
+</div>

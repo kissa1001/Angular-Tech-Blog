@@ -1,0 +1,20 @@
+<div class="container" ng-controller='PostsCtrl'>
+  <div class="panel panel-info" ng-repeat="post in posts | orderBy:'-upvotes'">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        {{post.title}}
+      </h4>
+      <i class="fa fa-thumbs-o-up" aria-hidden="true"
+      ng-click="upvote(post)"></i>
+      {{post.upvotes}}
+      <i class="fa fa-thumbs-o-down" aria-hidden="true"
+      ng-click="downvote(post)"></i>
+      {{post.downvotes}}
+    </div>
+    <div class="panel-body">
+      <p class="tagline">{{post.tags}}</p>
+      <p class="date">{{post.date}}</p>
+      <a href="#/posts/{{post._id}}">More Details</a>
+    </div>
+  </div>
+</div>
