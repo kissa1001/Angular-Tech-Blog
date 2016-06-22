@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost/blog';
+var MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost/posts';
 mongoose.connect('mongodb://localhost/blog');
 require('./models/Posts');
 require('./models/Comments');
