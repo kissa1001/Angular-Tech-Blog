@@ -84,6 +84,7 @@ font-family: 'Raleway', sans-serif;
 	margin-bottom: 3em;
 	text-align:center;
 	font-family: 'Raleway', sans-serif;
+	clear: both;
 }
 												/**Navigation**/
 .navbar-nav a{
@@ -119,6 +120,9 @@ font-family: 'Raleway', sans-serif;
 	font-size: 1.2em;
 	line-height: 2.2em;
 }
+.post-side{
+	border-right: 1px double #333;
+}
 .panel{
 	border:1px solid #58C9B9;
 }
@@ -140,16 +144,13 @@ font-family: 'Raleway', sans-serif;
 .box-com > .panel > .panel-heading > .panel-title {
 	font-size: 1em;
 }
-.box-com{
-	overflow-y: hidden;
-	height: auto;
-}
-.box-com:hover{
-	overflow-y: auto;
-}
 .comment-box{
-	border-left: 1px double #333;
 	padding-left: 1em;
+}
+.comments{
+	position: fixed;
+	right:10px;
+	top:100px;
 }
 i { cursor:pointer }
 
@@ -161,3 +162,21 @@ i { cursor:pointer }
 .animate-view.ng-enter.ng-enter-active { opacity:1; }
 .animate-view.ng-leave { opacity:1; z-index:99; }
 .animate-view.ng-leave.ng-leave-active { opacity:0; }
+
+@media only screen and (max-width : 500px) {
+	.comments{
+		position: static;
+	}
+	.post-body{
+	font-size: 1.1em;
+	line-height: 2.1em;
+}
+}
+
+@media only screen and (min-width : 500px) and (max-width: 768px) {
+	.comments{
+		position: static;
+	}
+}
+
+

@@ -1,6 +1,6 @@
 <div class="post-details" ng-controller='PostCtrl'>
   <div class="row">
-    <div class="col-sm-7">
+    <div class="col-sm-8 post-side">
       <div class="page-header">
         <h2><strong>{{post.title}}</strong></h2>
         <button class="pull-right my-btn" data-toggle="modal" data-target="#myModal">Delete Post</button>
@@ -27,8 +27,20 @@
       <div class="post-body">
         <p>{{post.content}}</p>
       </div>
+      <hr>
+      <h4>Comments:</h4>
+        <div class="box-com">
+          <div class="panel" ng-repeat="comment in post.comments">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{comment.author}}:</h3>
+          </div>
+          <div class="panel-body">
+            {{comment.body}}
+          </div>
+          <div class="panel-footer">{{comment.date}}</div>
+        </div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-4 comments">
       <div class="comment-box">
         <form ng-submit="addComment()" style="margin-top:30px;">
           <h4>Add a new comment:</h4>
@@ -44,17 +56,6 @@
           </div>
           <button type="submit" class="my-btn">Add Comment</button>
         </form>
-        <h4>Comments:</h4>
-        <div class="box-com">
-          <div class="panel" ng-repeat="comment in post.comments">
-          <div class="panel-heading">
-            <h3 class="panel-title">{{comment.author}}:</h3>
-          </div>
-          <div class="panel-body">
-            {{comment.body}}
-          </div>
-          <div class="panel-footer">{{comment.date}}</div>
-        </div>
         </div>
       </div>
     </div>
