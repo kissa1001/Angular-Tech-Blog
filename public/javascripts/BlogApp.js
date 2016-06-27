@@ -88,16 +88,19 @@ app.controller('addPostCtrl', ['$scope','postsService',function($scope,postsServ
 		postsService.createPost({
 			title: $scope.title,
 			tags: $scope.tags, 
+			author: $scope.author,
 			content: $scope.content,
 		});
 		$scope.title = '';
 		$scope.tags = '';
+		$scope.author = '';
 		$scope.content= '';
 	};
 }]);
 
 app.controller('PostsCtrl', ['$scope','postsService',function($scope,postsService){
 	$scope.posts = postsService.posts;
+	console.log($scope.posts);
 	$scope.upvote = function(post) {
 		postsService.upvote(post);
 	};
