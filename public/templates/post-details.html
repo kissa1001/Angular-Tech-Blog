@@ -1,57 +1,63 @@
 <div class="post-details" ng-controller='PostCtrl'>
-  <div class="page-header">
-    <h2><strong>{{post.title}}</strong></h2>
-    <button class="pull-right my-btn" data-toggle="modal" data-target="#myModal">Delete Post</button>
-    <p>
-      <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body">
-              <h4 class="text-center">Are you sure?</h4>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="my-btn" data-dismiss="modal">Cancel</button>
-              <button type="button" class="my-btn" data-dismiss="modal" ng-click='deletePost()' >I'm sure!</button>
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="page-header">
+        <h2><strong>{{post.title}}</strong></h2>
+        <button class="pull-right my-btn" data-toggle="modal" data-target="#myModal">Delete Post</button>
+        <p>
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <h4 class="text-center">Are you sure?</h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="my-btn" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="my-btn" data-dismiss="modal" ng-click='deletePost()' >I'm sure!</button>
+                </div>
+              </div>
             </div>
           </div>
-
-        </div>
+          <i class="fa fa-thumbs-o-up" aria-hidden="true" ng-click="upvote(post)"></i>{{post.upvotes}}
+          <i class="fa fa-thumbs-o-down" aria-hidden="true" ng-click="downvote(post)"></i>
+        </p>
+        <p class="tagline">Tags: {{post.tags}}</p>
+        <p class="date">Created on: {{post.date}} - by: {{post.author}}}</p>
       </div>
-
-      <i class="fa fa-thumbs-o-up" aria-hidden="true" ng-click="upvote(post)"></i>{{post.upvotes}}
-      <i class="fa fa-thumbs-o-down" aria-hidden="true" ng-click="downvote(post)"></i>
-    </p>
-    <p class="tagline">Tags: {{post.tags}}</p>
-    <p class="date">Created on: {{post.date}} - by: {{post.author}}}</p>
-  </div>
-  <div class="post-body">
-    <p>{{post.content}}</p>
-  </div>
-  <hr>
-  <div class="comment-box">
-    <form ng-submit="addComment()" style="margin-top:30px;">
-      <h4>Add a new comment:</h4>
-      <div class="comment-form form-group">
-        <div class="form-group">
-          <label class="control-label">Author:</label>
-          <input type="text" class="form-control" placeholder="Your name" ng-model="author"></input>
-        </div>
-        <div class="form-group">
-          <label class="control-label">Comment:</label>
-          <textarea class="form-control" rows="3" placeholder="Comment" ng-model="body"></textarea>
-        </div>
+      <div class="post-body">
+        <p>{{post.content}}</p>
       </div>
-      <button type="submit" class="my-btn">Add Comment</button>
-    </form>
-    <h4>Comments:</h4>
-    <div class="panel panel-default" ng-repeat="comment in post.comments">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{comment.author}}:</h3>
-      </div>
-      <div class="panel-body">
-        {{comment.body}}
-      </div>
-      <div class="panel-footer">{{comment.date}}</div>
     </div>
+    <div class="col-sm-5">
+      <div class="comment-box">
+        <form ng-submit="addComment()" style="margin-top:30px;">
+          <h4>Add a new comment:</h4>
+          <div class="comment-form form-group">
+            <div class="form-group">
+              <label class="control-label">Author:</label>
+              <input type="text" class="form-control" placeholder="Your name" ng-model="author"></input>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Comment:</label>
+              <textarea class="form-control" rows="3" placeholder="Comment" ng-model="body"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="my-btn">Add Comment</button>
+        </form>
+        <h4>Comments:</h4>
+        <div class="box-com">
+          <div class="panel" ng-repeat="comment in post.comments">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{comment.author}}:</h3>
+          </div>
+          <div class="panel-body">
+            {{comment.body}}
+          </div>
+          <div class="panel-footer">{{comment.date}}</div>
+        </div>
+        </div>
+      </div>
+    </div>
+     <p class="footer">Made with <i class="fa fa-heart" aria-hidden="true"></i> by Lina!</p>
   </div>
 </div>
