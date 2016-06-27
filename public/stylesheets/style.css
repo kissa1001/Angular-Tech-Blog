@@ -122,6 +122,7 @@ font-family: 'Raleway', sans-serif;
 }
 .post-side{
 	border-right: 1px double #333;
+	padding-right: 2em;
 }
 .panel{
 	border:1px solid #58C9B9;
