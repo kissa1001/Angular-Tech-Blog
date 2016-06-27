@@ -94,6 +94,13 @@ font-family: 'Raleway', sans-serif;
     color: #58C9B9;
     border-bottom:1px dashed #58C9B9;
 }
+.panel > .panel-heading > .panel-title{
+	color: #333;
+	font-size: 1.5em;
+	line-height: 0.5em;
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
+}
 .panel > .panel-body > a{
 	color: #58C9B9;
 }
