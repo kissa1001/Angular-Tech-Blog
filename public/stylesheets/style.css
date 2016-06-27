@@ -115,6 +115,10 @@ font-family: 'Raleway', sans-serif;
 	padding:3em 4em;
 	font-family: 'Raleway', sans-serif;
 }
+.post-body{
+	font-size: 1.2em;
+	line-height: 2.2em;
+}
 .panel{
 	border:1px solid #58C9B9;
 }
@@ -138,10 +142,10 @@ font-family: 'Raleway', sans-serif;
 }
 .box-com{
 	overflow-y: hidden;
-	height: 400px;
+	height: auto;
 }
 .box-com:hover{
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .comment-box{
 	border-left: 1px double #333;
