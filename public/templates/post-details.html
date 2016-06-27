@@ -1,7 +1,7 @@
-<div class="container" ng-controller='PostCtrl'>
+<div class="post-details" ng-controller='PostCtrl'>
   <div class="page-header">
     <h2>{{post.title}}</h2>
-    <button class="pull-right btn btn-danger" data-toggle="modal" data-target="#myModal">Delete Post</button>
+    <button class="pull-right my-btn" data-toggle="modal" data-target="#myModal">Delete Post</button>
     <p>
       <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -10,8 +10,8 @@
               <h4 class="text-center">Are you sure?</h4>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click='deletePost()' >I'm sure!</button>
+              <button type="button" class="my-btn" data-dismiss="modal">Cancel</button>
+              <button type="button" class="my-btn" data-dismiss="modal" ng-click='deletePost()' >I'm sure!</button>
             </div>
           </div>
 
@@ -21,8 +21,8 @@
       <i class="fa fa-thumbs-o-up" aria-hidden="true" ng-click="upvote(post)"></i>{{post.upvotes}}
       <i class="fa fa-thumbs-o-down" aria-hidden="true" ng-click="downvote(post)"></i>
     </p>
-    <p class="tagline">{{post.tags}}</p>
-    <p class="date">{{post.date}}</p>
+    <p class="tagline">Tags: {{post.tags}}</p>
+    <p class="date">Created: {{post.date}}</p>
   </div>
   <div class="post-body">
     <p>{{post.content}}</p>
@@ -41,7 +41,7 @@
           <textarea class="form-control" rows="3" placeholder="Comment" ng-model="body"></textarea>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Add Comment</button>
+      <button type="submit" class="my-btn">Add Comment</button>
     </form>
     <h4>Comments:</h4>
     <div class="panel panel-default" ng-repeat="comment in post.comments">
