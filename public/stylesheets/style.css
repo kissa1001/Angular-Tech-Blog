@@ -121,11 +121,14 @@ body{
 	line-height: 2.2em;
 }
 .post-side{
-	border-right: 1px double #333;
+	box-shadow: 3px 3px 10px #888888;
 	padding-right: 2em;
+	margin-bottom: 3em;
 }
 .panel{
-	border:1px solid #58C9B9;
+	border: none;
+	border-radius: 0px;
+	box-shadow: 3px 3px 10px #888888;
 }
 .panel > .panel-heading {
 	background-color: rgba(88, 201, 185, 0.1);
